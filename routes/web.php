@@ -15,7 +15,7 @@ use App\Film;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 
@@ -33,7 +33,20 @@ Route::get('/film/{id}', function () {
     return view('film');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
 
+Route::get('/bilhetes', function () {
+    return view('bilhetes');
+});
 
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/brevemente', function () {
+    return view('brevemente');
+});
 
 

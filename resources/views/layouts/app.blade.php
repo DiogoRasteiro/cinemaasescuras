@@ -8,6 +8,23 @@
 <!--    <link rel="stylesheet" href="css/bootstrap.css" > -->
     <link rel="stylesheet" href="{{ asset('css/Hover.css') }}" >
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+
+<style>
+.map-container-5{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container-5 iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+</style>
+
 </head>
 <body>
 
@@ -15,7 +32,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #881720;">
     <div class="container">
 
-      <a class="navbar-brand" href="Home.html">
+    <a class="navbar-brand" href="{{ url('/') }}">
             <img src="img/film-roll.png" width="100" height="100" alt="">
           </a>
          <h1 class="text-white"> CINEMA ÀS ESCURAS</h1>
@@ -25,24 +42,24 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
           <li class="nav-item">
-              <a class="nav-link" href="Sobre.html">Sobre Nós</a>
+              <a class="nav-link" href="{{ url('/about') }}">Sobre Nós</a>
             </li>
             <li class="nav-item">
               <a class="nav-link btn dropdown-toggle" href="" data-toggle="dropdown">Filmes</a>
               <div class="dropdown">
 
                 <div class="dropdown-menu" style="background-color: #881720;" >
-                  <a class="dropdown-item" href="Em cartaz.html" style="color: rgb(197, 165, 165);">Cartaz</a>
-                  <a class="dropdown-item" href="Brevemente.html" style="color: rgb(197, 165, 165);">Brevemente</a>
+                  <a class="dropdown-item" href="{{ url('/films') }} style="color: rgb(197, 165, 165);">Cartaz</a>
+                  <a class="dropdown-item" href="{{ url('/brevemente') }}" style="color: rgb(197, 165, 165);">Brevemente</a>
 
                 </div>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about_us.html">Compra de Bilhetes</a>
+            <a class="nav-link" href="{{ url('/bilhetes') }}">Compra de Bilhetes</a>
             </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="{{ url('/login') }}">Login</a>
           </li>
         </ul>
       </div>
