@@ -49,7 +49,7 @@ position:absolute;
               <div class="dropdown">
 
                 <div class="dropdown-menu" style="background-color: #881720;" >
-                  <a class="dropdown-item" href="{{ url('/films') }} style="color: rgb(197, 165, 165);">Cartaz</a>
+                  <a class="dropdown-item" href="{{ url('/films') }}" style="color: rgb(197, 165, 165);">Cartaz</a>
                   <a class="dropdown-item" href="{{ url('/brevemente') }}" style="color: rgb(197, 165, 165);">Brevemente</a>
 
                 </div>
@@ -93,8 +93,8 @@ position:absolute;
 @yield('content')
 
 <br><br><br>
-<script src="js/jquery-3.3.1.slim.min.js" ></script>
-<script src="js/popper.min.js" ></script>
-<script src="js/bootstrap.min.js" ></script>
+<script src="{{ URL::asset('js/jquery-3.3.1.slim.min.js')}}" ></script>
+<script src="{{ URL::asset('js/popper.min.js')}}" ></script>
+<script src="{{ URL::asset('js/bootstrap.min.js')}}" ></script>
 </body>
 </html>
