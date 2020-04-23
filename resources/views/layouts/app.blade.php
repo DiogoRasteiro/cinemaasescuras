@@ -58,9 +58,20 @@ position:absolute;
             <li class="nav-item">
             <a class="nav-link" href="{{ url('/bilhetes') }}">Compra de Bilhetes</a>
             </li>
+
+            @if (Auth::check())
+          <li class="nav-item">
+           <a class="nav-link">  Hi @php echo (Auth::user()->name) @endphp </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/logout') }}">Logout</a>
+          </li>
+            @else
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/login') }}">Login</a>
           </li>
+            @endif
+          
         </ul>
       </div>
     </div>

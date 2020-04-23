@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Film;
 
 /*
@@ -49,4 +50,14 @@ Route::get('/brevemente', function () {
     return view('brevemente');
 });
 
+Route::get('/logout', function () {
+    Auth::logout();
+    return view('home');
+});
 
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
