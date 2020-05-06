@@ -1,5 +1,7 @@
 ﻿@extends('layouts.app')
 
+@section('title') Sobre nós @endsection
+
 @section('content')
 
 <!-- História -->

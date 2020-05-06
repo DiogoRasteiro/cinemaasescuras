@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>@yield('title', 'Cinema às Escuras')</title>
 <!--    <link rel="stylesheet" href="css/bootstrap.css" > -->
     <link rel="stylesheet" href="{{ asset('css/Hover.css') }}" >
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -33,7 +33,7 @@ position:absolute;
     <div class="container">
 
     <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="img/film-roll.png" width="100" height="100" alt="">
+            <img src="/img/film-roll.png" width="100" height="100" alt="">
           </a>
          <h1 class="text-white"> CINEMA ÀS ESCURAS</h1>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">   
@@ -49,7 +49,7 @@ position:absolute;
               <div class="dropdown">
 
                 <div class="dropdown-menu" style="background-color: #881720;" >
-                  <a class="dropdown-item" href="{{ url('/films') }}" style="color: rgb(197, 165, 165);">Cartaz</a>
+                  <a class="dropdown-item" href="{{ url('/filmlist') }}" style="color: rgb(197, 165, 165);">Cartaz</a>
                   <a class="dropdown-item" href="{{ url('/brevemente') }}" style="color: rgb(197, 165, 165);">Brevemente</a>
 
                 </div>
@@ -61,7 +61,7 @@ position:absolute;
 
             @if (Auth::check())
           <li class="nav-item">
-           <a class="nav-link">  Hi @php echo (Auth::user()->name) @endphp </a>
+           <p class="nav-link">  Hi @php echo (Auth::user()->name) @endphp </p>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/logout') }}">Logout</a>

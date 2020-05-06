@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title') Brevemente @endsection
+
 @section('content')
 <!-- Film Gallery - Em cartaz -->
 <!-- Primeira Fila-->
