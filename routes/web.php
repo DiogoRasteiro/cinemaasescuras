@@ -22,7 +22,10 @@ Route::get('/', function () {
 
 
 Route::get('/films', function () {
-    return view('cartaz');
+    $films = Film::orderBy('created_at', 'asc')->get();
+    return view('cartaz',[
+        'films' => $films
+    ]);
 });
 
 Route::get('/createfilm', function () {
@@ -42,7 +45,8 @@ Route::post('/film', function (Request $request) {
     }
 
     $film = new Film;
-    $name = $request->name;    
+    $name = $request->name;
+    $name = str_replace(' ', '+', $name);
     $url = "http://www.omdbapi.com/?apikey=93106eba&t=" . $name;
 
     $ch = curl_init();
@@ -74,8 +78,8 @@ Route::post('/film', function (Request $request) {
 });
 
 Route::get('/filmlist', function () {
-    $films = Film::orderBy('id', 'asc')->get();
-    return view('filmes', [
+    $films = Film::orderBy('created_at', 'asc')->get();
+    return view('cartaz',[
         'films' => $films
     ]);
 });
@@ -89,6 +93,15 @@ Route::get('/film/{id}', function ($id) {
 
 Route::get('/about', function () {
     return view('about');
+});
+
+Route::get('/admin', function () {
+    if (Auth::check()) {
+        return view('admin');
+    }
+    else {
+        Route::redirect('/admin', '/filmlist', 302);
+    }
 });
 
 Route::get('/bilhetes', function () {

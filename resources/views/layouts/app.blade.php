@@ -10,6 +10,76 @@
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
 
 <style>
+
+/* Style the form */
+
+  
+/* Style the input fields */
+input {
+padding: 10px;
+width: 100%;
+font-size: 17px;
+border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+height: 15px;
+width: 15px;
+margin: 0 2px;
+background-color: #bbbbbb;
+border: none;
+border-radius: 50%;
+display: inline-block;
+opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */>
+.step.finish {
+background-color: #881720;
+}
+
+
+
+
+/* Seat style */
+
+.messagePanel { border: solid 1px black; width: 320px; height: 330px; }
+
+.seat {   
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border: solid 1px black;
+    float: left;
+    border-radius: 7px;
+}
+.clearfix { clear: both;}
+.available {
+    background-color: rgb(245, 243, 243);
+}
+.hovering{
+	background-color: gray;
+}
+.selected{
+    background-color:  #881720;
+}
+
 .map-container-5{
 overflow:hidden;
 padding-bottom:56.25%;
@@ -55,9 +125,15 @@ position:absolute;
                 </div>
               </div>
             </li>
+            @if (Auth::check())
+            <li class="nav-item">
+            <a class="nav-link" href="{{ url('/admin') }}">Zona admin</a>
+            </li>
+            @else
             <li class="nav-item">
             <a class="nav-link" href="{{ url('/bilhetes') }}">Compra de Bilhetes</a>
             </li>
+            @endif
 
             @if (Auth::check())
           <li class="nav-item">
